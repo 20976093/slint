@@ -1,0 +1,122 @@
+{
+  "generated": "2026-10-12",
+  "revised": "2026-10-12 21:00（接入 GitHub 后补投稿门槛实测，推翻昨日优先级）",
+  "purpose": "把 slint 提交进公开 awesome-* 清单。清单条目是被动的、不过期的发现入口。",
+  "revision_reason": "昨日（2026-10-12 20:00）只验证了「仓库存在 + star 数」，没有验证「收录门槛」。本轮逐个读取目标仓库的 contributing.md / README 贡献章节原文后发现：昨日标为「优先投」和 fit=高 的两个清单都有硬性 star/年龄门槛，一个 0 star 的新仓库今天投进去必然被关。已按实测门槛重排优先级。",
+
+  "gate_audit": {
+    "method": "逐个 curl api.github.com/repos/<repo>/contents/contributing.md（含小写变体）与 README.md，读原文摘录门槛句。未读原文不下结论。",
+    "measured_at": "2026-10-12 21:00",
+    "results": [
+      {
+        "repo": "agarrharr/awesome-cli-apps",
+        "gate_quote": "Have more than 20 stars (if it is hosted on GitHub.) / Be more than 3 months old. / AI-generated PRs are not welcome. To keep this list awesome, we would like to know why a human thinks the app-to-be-added is awesome!",
+        "slint_passes": false,
+        "why": "slint 今天 push，0 star、0 天。两个硬门槛全不满足。且该清单明文不欢迎 AI 生成的 PR，要求写「为什么一个人类觉得它 awesome」——这条 PR 必须键灵自己写理由，不能由我代笔后他原样提交",
+        "earliest_submit": "仓库满 3 个月且 ≥20 star 之后（约 2027-01 中下旬，若 star 能涨到 20）"
+      },
+      {
+        "repo": "sindresorhus/awesome-nodejs",
+        "gate_quote": "The submitted project should be more than 30 days old and the repo should have at least 100 stars. / For CLI tools, the bar is especially high, and unless it's something very awesome, I would suggest submitting to awesome-cli-apps instead.",
+        "slint_passes": false,
+        "why": "100 star 门槛对 0 star 新仓库不可能。且维护者明说 CLI 类门槛特别高、建议改投 awesome-cli-apps——而 awesome-cli-apps 也有 20 star 门槛。两个清单互相指向对方，新仓库两条路都堵",
+        "earliest_submit": "≥100 star 之后"
+      },
+      {
+        "repo": "serpapi/awesome-seo-tools",
+        "gate_quote": "If you know any other SEO tools that deserve to be on this list, feel free to open a pull request or drop an issue with your suggestions. How to contribute: Work only on README.md file. You can put the link at the bottom of the relevant category. Make sure it does not exist in this list yet.",
+        "slint_passes": true,
+        "why": "无 star 门槛、无年龄门槛。且该清单已有 ## GEO / AI Visibility 分类，里面已收录 [GEO/AEO Tracker]（开源、local-first、自托管、$0/month 的 AI 可见度工具）——与 slint-page.mjs 形态完全同类的先例，证明这个分类收开源本地优先的 AI 可见度工具",
+        "target_section": "## GEO / AI Visibility（条目加在该分类底部）"
+      },
+      {
+        "repo": "iAmCorey/awesome-indie-hacker-tools",
+        "gate_quote": "欢迎提交pr和issue，提交你的工具或修正建议",
+        "slint_passes": true,
+        "why": "中文独立开发/出海向清单，无门槛，明说欢迎提 PR。slint 是给独立开发者验证需求信号的工具，主题完全对口",
+        "target_section": "开发工具 / 灵感获取 相关分类（提交前先读 README 目录）"
+      },
+      {
+        "repo": "XiaomingX/indie-hacker-tools-plus",
+        "gate_quote": "欢迎大家提PR和issues / 欢迎投稿，推荐或自荐文章/软件/资源，请提交 issue",
+        "slint_passes": true,
+        "why": "无门槛。但注意该仓库贡献方法写的是「请提交 issue」而不是 PR——按对方规范应提 issue 而不是 PR，否则可能不被处理。该仓库 2026-10-12 当天有 push、2026-10-06 有合并，活跃",
+        "target_section": "按 issue 提交，不按 PR"
+      },
+      {
+        "repo": "sindresorhus/awesome",
+        "gate_quote": "未取到：README.md 在仓库根路径实测 HTTP 404（可能已迁移路径），未能读到贡献规范",
+        "slint_passes": null,
+        "why": "未读到规范，不下结论。且这是最严的母清单，优先级本就低",
+        "earliest_submit": "未定"
+      }
+    ]
+  },
+
+  "corrected_priority": [
+    {
+      "rank": 1,
+      "repo": "serpapi/awesome-seo-tools",
+      "stars": 1112,
+      "open_pr": 252,
+      "closed_pr": 129,
+      "last_push": "2026-09-14",
+      "reason": "唯一同时满足①无 star/年龄门槛②主题精确对口（已有 GEO / AI Visibility 分类，且已收录同形态开源工具）③规范写得很清楚（只改 README.md、加在相关分类底部、确认不重复）的目标。252 个 open PR 说明队列会长，但它是免费且被动的，排着不影响别的事"
+    },
+    {
+      "rank": 2,
+      "repo": "iAmCorey/awesome-indie-hacker-tools",
+      "stars": 1429,
+      "open_pr": 104,
+      "closed_pr": 39,
+      "last_push": "2026-05-16",
+      "reason": "无门槛 + 中文独立开发者受众（与键灵受众重叠）+ 明说欢迎 PR。队列 104 open / 39 closed 偏长，149 天未 push，可能处理慢"
+    },
+    {
+      "rank": 3,
+      "repo": "XiaomingX/indie-hacker-tools-plus",
+      "stars": 1883,
+      "open_pr": 25,
+      "closed_pr": 6,
+      "last_push": "2026-10-12（当天）",
+      "reason": "无门槛 + 当天仍在更新 + 25 open PR 是三个无门槛目标里队列最短的。但对方规范要 issue 不要 PR，且 star 数最低，曝光价值小于前两个"
+    }
+  ],
+
+  "do_not_submit_yet": [
+    { "repo": "agarrharr/awesome-cli-apps", "reason": "需 ≥20 star 且 ≥3 个月；另该清单明文不欢迎 AI 生成 PR，理由必须键灵自己写" },
+    { "repo": "sindresorhus/awesome-nodejs", "reason": "需 ≥100 star 且 ≥30 天" }
+  ],
+
+  "entry_copy": {
+    "_format_note": "serpapi/awesome-seo-tools 的条目格式依其 README 现有实例：`- [Name](url) - Description.`（空格-连字符-空格，句点结尾）。",
+    "serpapi_awesome_seo_tools__GEO_AI_Visibility": "- [slint](https://github.com/OWNER/slint) - Open-source CLI that scores whether a page is retrievable by AI engines, using 8 checks ported from published research. Zero-dependency, local-first, $0/month.",
+    "iAmCorey_awesome_indie_hacker_tools": "- [slint](https://github.com/OWNER/slint) - 在把社区里「我愿意付钱」的帖子统计成需求之前，先用三道闸门证明那些数字不是自己编的。零依赖单文件 Node 工具。",
+    "_honest_note": "以上文案按各清单现有条目风格写，未夸大、未含收入承诺、未虚构数据。描述里的「8 checks ported from published research」与「零依赖单文件」均为本仓库可复现事实（README 数据来源表列了判据出处）。OWNER 必须替换为 20976093。"
+  },
+
+  "pr_body_template": {
+    "for": "serpapi/awesome-seo-tools",
+    "note": "PR 描述由键灵自己最终定稿并提交。我不代写「为什么我觉得它 awesome」这类需要人类判断的部分——awesome-cli-apps 已明文不欢迎 AI 生成的 PR，把这个标准前置到所有提交更稳妥。",
+    "skeleton": "Adding slint to the GEO / AI Visibility section.\n\nWhat it is: a zero-dependency Node CLI that scores a page's AI-retrieval readiness with 8 checks (server-rendered body, structured data, extractable list/table content, exact numbers with sources, topic-cluster internal links, absolute canonical, visible update date, robots.txt not blocking AI crawlers).\n\nWhy it belongs here: it is open-source, local-first, self-hosted, $0/month — same shape as the GEO/AEO Tracker already in this section. It measures page readiness only and explicitly does not claim to prove any engine cites the page.\n\nChecks and thresholds are sourced from published research (arXiv 2510.11560, Ahrefs GEO study, Writesonic, Wellows) plus reproducible measurements documented in the repo README. Added at the bottom of the GEO / AI Visibility section. MIT licensed."
+  },
+
+  "submission_checklist": [
+    "第 0 步（阻塞）：slint 仓库必须先有公网地址。本机实测 GitHub MCP 连接器为只读——create_repository 与 push_files / create_or_update_file 均返回 403 Resource not accessible by integration。需键灵在 GitHub 网页端新建 public 仓库 slint 并上传 outputs/oss_repo 的 6 个文件，或提供一个有 repo 权限的 PAT",
+    "把 entry_copy 里的 OWNER 全部替换为 20976093（未替换 = 死链，会被直接关掉）",
+    "提交前重跑 gate_audit：确认目标仓库的 contributing.md / README 贡献章节没有变（门槛会被维护者修改）",
+    "serpapi 清单的规则是「只改 README.md」+「加在相关分类底部」+「确认不重复」——先在该仓库搜 slint 确认没有已存在条目",
+    "XiaomingX/indie-hacker-tools-plus 的规范是提 issue 不是 PR，不要投错形态",
+    "一个清单只提一次，不要一次投 3 个（会被当成 spam）",
+    "awesome-cli-apps / awesome-nodejs 今天不要投：star 与年龄门槛全不满足，投了必然被关，还会给账号留下噪声记录",
+    "PR 的「为什么值得收录」部分由键灵自己写，不由我代笔后原样提交",
+    "被拒不要争辩，按对方要求的格式改一次；仍被拒就记录到案例库并换下一个目标，不要反复重投"
+  ],
+
+  "expected_payoff": {
+    "measured_comparable": "同类独立开发者自述：41 个 PR 提交、28 个被合并、约 40 次下载、投入约 2 小时（未审计）",
+    "honest_caveat": "这是下载量不是收入。下载也不等于付费。清单条目是发现入口，不是成交渠道。",
+    "additional_honest_caveat": "本轮新发现：awesome-list 的 star/年龄门槛意味着「今天投」这个动作本身不可执行。真实的先后顺序是先把仓库推上去、让 star 涨起来，再投有门槛的清单；无门槛的清单可以今天投。把「投清单」当成当天就能完成的事是错的。",
+    "days_to_first_dollar_if_it_works": "不承诺。本项目账本口径下首笔钱中位 30 天，任何单次渠道动作都不该被当成 7 天见效的保证"
+  }
+}
