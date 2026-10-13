@@ -1,0 +1,26 @@
+{
+  "name": "slint",
+  "version": "1.0.0",
+  "description": "Verify that demand signals in public text are real before you count them. Zero dependencies, single file, Node 18+.",
+  "type": "module",
+  "bin": {
+    "slint-community": "./slint/slint-community.mjs",
+    "slint-page": "./slint/slint-page.mjs"
+  },
+  "scripts": {
+    "community": "node slint/slint-community.mjs --days 30",
+    "page": "node slint/slint-page.mjs"
+  },
+  "keywords": [
+    "market-research",
+    "demand-validation",
+    "community-mining",
+    "seo",
+    "geo",
+    "ai-citation",
+    "open-source"
+  ],
+  "engines": { "node": ">=18" },
+  "license": "MIT",
+  "dependencies": {}
+}
